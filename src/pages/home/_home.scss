@@ -1,13 +1,16 @@
 // sections layout
+.story_card {
+  border-bottom: 8px solid #222;
+  padding: 70px 45px;
 
-// header sub header responsive font size
+  .story_card_title {
+    font-size: 3.125rem;
+    line-height: 1.1;
+  }
 
-// Use for breakpoints ( padding & font sizes )
-
-// .section {
-//   padding: 70px 45px;
-// }
-// .section {
-//  padding: 70px 45px;
-//     border-bottom: 8px solid #222;
-//   }
+  .story_card_subtitle {
+    font-size: 1.625rem;
+    margin: 1rem auto;
+    font-weight: 400;
+  }
+}

@@ -1,9 +1,10 @@
 // misc
 @import '../scss/base/base';
 @import '../scss/base/typography';
-// components
-@import '../components//header/header';
-@import '../components/feature/feature';
-@import '../components/opt_form/optForm/';
+
 // pages
 @import '../pages/home/Home';
+// components
+@import '../components/header/header';
+@import '../components/hero/hero';
+@import '../components/cta-form/ctaForm/';

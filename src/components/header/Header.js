@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Header({ children }) {
   return (
-    <header className='header'>
+    <header className='header section'>
       <div className="gradient_overlay"></div>
       <nav className='navbar'>
         <div className="nav_items">
