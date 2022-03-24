@@ -1,12 +1,18 @@
-// Border dark Mixin
-@mixin bottom-borders {
-  border-bottom: 8px solid #222;
+// btn
+@mixin btn() {
+  text-decoration: none;
+  background-color: $color-red;
+  cursor: pointer;
+  border: 0;
+  color: $color-white;
 }
+
+// Screen breakpoints
 $breakpoints: (
   'xs': 0,
   'sm': 550px,
   'md': 720px,
-  'lg': 960px,
+  'lg': 950px,
   'xl': 1200px,
 );
 
@@ -45,35 +51,3 @@ $breakpoints: (
     @content;
   }
 }
-
-// @mixin btn($bg-color: #e2e2e2) {
-//   text-decoration: none;
-//   cursor: pointer;
-//   display: inline-block;
-//   border: 0;
-//   background-color: $color-red;
-
-//   &:hover {
-//     background-color: #e2e2e2;
-//   }
-// }
-
-// .btn {
-//   @include btn;
-// }
-
-// @each $key, $val in $colors {
-//   .btn-#{$key} {
-//     @include btn($val);
-//     &:hover {
-//       background-color: lighten($val, 5);
-//     }
-//   }
-//   .btn-outlined-#{$key} {
-//     @include btn(#fff);
-//     border: $base-border-thickness solid $val;
-//     &:hover {
-//       background-color: $val;
-//     }
-//   }
-// }
