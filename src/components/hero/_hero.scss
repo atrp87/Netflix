@@ -1,0 +1,32 @@
+.hero_card {
+  text-align: center;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .hero_card_text {
+    max-width: 640px;
+    z-index: 999;
+
+    .story_card_title {
+      font-size: 3.125rem;
+      line-height: 1.1;
+
+      @include sm {
+        font-size: 1.75rem;
+      }
+    }
+
+    .story_card_subtitle {
+      margin: 1rem auto;
+      font-weight: 400;
+      font-size: 1.625rem;
+
+      @include sm {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}

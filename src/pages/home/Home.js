@@ -1,20 +1,25 @@
 import Header from '../../components/header/Header'
-import Feature from '../../components/feature/Feature'
-import OptForm from '../../components/opt_form/OptForm'
+import Hero from '../../components/hero/Hero'
+import CtaForm from '../../components/cta-form/CtaForm'
+import Jumbotron from '../../components/jumbotron/Jumbotron'
 
 
 export default function Home() {
   return (
-    <section className='home'>
+    <div className='home'>
       <Header>
-        <Feature>
-          <OptForm />
-        </Feature>
+        <Hero>
+          <CtaForm />
+        </Hero>
       </Header>
 
-      {/* <Jumbotron />
-      <Accordion />
+      <Jumbotron />
+
+
+
+
+      {/* <Accordion />
       <Footer /> */}
-    </section>
+    </div>
   )
 }

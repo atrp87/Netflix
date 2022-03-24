@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 export default function Header({ children }) {
   return (
-    <header className='header section'>
+    <header className='header_wrapper'>
       <div className="gradient_overlay"></div>
-      <nav className='navbar'>
-        <div className="nav_items">
+      <nav className='header'>
+        <div className="header_items">
           <img
             src={Logo}
             alt="Netflix logo"
