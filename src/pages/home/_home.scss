@@ -1,1 +1,51 @@
+.home_page_container {
+  width: 100%;
 
+  .home_page_cards {
+    margin: 0 auto;
+  }
+
+  .home_page_card {
+    position: relative;
+    padding: 70px 45px;
+    border-bottom: $border-bottom-dark;
+    margin-bottom: 0;
+
+    @include sm {
+      padding: 50px 5%;
+    }
+  }
+
+  .home_card_title {
+    line-height: 1.1;
+
+    @include smallDevices {
+      font-size: 1.75rem;
+    }
+
+    @include mediumDevices {
+      font-size: 3.125rem;
+    }
+
+    @include xl {
+      font-size: 4rem;
+    }
+  }
+
+  .home_card_subtitle {
+    margin: 1rem auto;
+    font-weight: 400;
+
+    @include smallDevices {
+      font-size: 1.125rem;
+    }
+
+    @include mediumDevices {
+      font-size: 1.25rem;
+    }
+
+    @include xl {
+      font-size: 1.625rem;
+    }
+  }
+}

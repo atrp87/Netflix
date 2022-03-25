@@ -1,64 +1,64 @@
-.story_card {
-  border-bottom: $border-bottom-dark;
-  padding: 70px 45px;
+// .story_card {
+//   border-bottom: $border-bottom-dark;
+//   padding: 70px 45px;
 
-  @include sm {
-    padding: 50px 5%;
-  }
+//   @include sm {
+//     padding: 50px 5%;
+//   }
 
-  .card_container {
-    display: flex;
-    max-width: 1100px;
-    align-items: center;
-    margin: 0 auto;
+//   .card_container {
+//     display: flex;
+//     max-width: 1100px;
+//     align-items: center;
+//     margin: 0 auto;
 
-    @include lg {
-      flex-direction: column !important;
-    }
+//     @include lg {
+//       flex-direction: column !important;
+//     }
 
-    .story_card_text {
-      padding: 0 3rem 0 0;
-      width: 52%;
+//     .story_card_text {
+//       padding: 0 3rem 0 0;
+//       width: 52%;
 
-      @include lg {
-        width: 100%;
-        text-align: center;
-        padding: 0;
-      }
+//       @include lg {
+//         width: 100%;
+//         text-align: center;
+//         padding: 0;
+//       }
 
-      .story_card_title {
-        font-size: 3.125rem;
-        line-height: 1.1;
-        margin-bottom: 0.5rem;
+//       .story_card_title {
+//         font-size: 3.125rem;
+//         line-height: 1.1;
+//         margin-bottom: 0.5rem;
 
-        @include lg {
-          font-size: 1.625rem;
-        }
-      }
+//         @include lg {
+//           font-size: 1.625rem;
+//         }
+//       }
 
-      .story_card_subtitle {
-        margin: 0.75em 0 0.25em;
-        font-size: 1.625rem;
-        margin: 1rem auto;
-        font-weight: 400;
+//       .story_card_subtitle {
+//         margin: 0.75em 0 0.25em;
+//         font-size: 1.625rem;
+//         margin: 1rem auto;
+//         font-weight: 400;
 
-        @include lg {
-          font-size: 1.125rem;
-        }
-      }
-    }
+//         @include lg {
+//           font-size: 1.125rem;
+//         }
+//       }
+//     }
 
-    .story_card_img_container {
-      width: 50%;
+//     .story_card_img_container {
+//       width: 50%;
 
-      @include lg {
-        width: 100%;
-        max-width: 600px;
-        margin-top: 1em;
-      }
-    }
-    img {
-      max-width: 100%;
-    }
-  }
-}
+//       @include lg {
+//         width: 100%;
+//         max-width: 600px;
+//         margin-top: 1em;
+//       }
+//     }
+//     img {
+//       max-width: 100%;
+//     }
+//   }
+// }

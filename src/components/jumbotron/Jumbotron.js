@@ -7,10 +7,11 @@ export default function Jumbotron() {
         jumboJson.map(story => (
           <div
             key={story.id}
-            className="story_card">
+            className="home_page_card">
             <div
               style={{ flexDirection: story.direction }}
               className="card_container">
+              {/* LOOP THROUGH AND ADD MARGIN */}
               <div className="story_card_text">
                 <h1 className='story_card_title'>
                   {story.title}
@@ -19,12 +20,12 @@ export default function Jumbotron() {
                   {story.subTitle}
                 </h2>
               </div>
-              <div className="story_card_img_container">
+              {/* <div className="story_card_img_container">
                 <img
                   src={story.image}
                   alt={story.alt}
-                />
-              </div>
+                /> */}
+              {/* </div> */}
             </div>
           </div>
         ))

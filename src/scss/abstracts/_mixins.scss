@@ -1,53 +1,65 @@
 // btn
 @mixin btn() {
-  text-decoration: none;
   background-color: $color-red;
   cursor: pointer;
   border: 0;
   color: $color-white;
 }
 
-// Screen breakpoints
 $breakpoints: (
   'xs': 0,
   'sm': 550px,
   'md': 750px,
   'lg': 950px,
-  'xl': 1200px,
+  'xl': 1450px,
 );
 
-@mixin xs {
-  @media (max-width: map-get($breakpoints, 'xs')) {
-    @content;
-  }
-}
+// Home Text Title
 
-@mixin sm {
+@mixin smallDevices {
   @media (max-width: map-get($breakpoints, 'sm')) {
     @content;
   }
 }
 
+@mixin mediumDevices {
+  @media (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'xl')) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (min-width: map-get($breakpoints, 'xs')) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: map-get($breakpoints, 'sm')) {
+    @content;
+  }
+}
+
 @mixin md {
-  @media (max-width: map-get($breakpoints, 'md')) {
+  @media (min-width: map-get($breakpoints, 'md')) {
     @content;
   }
 }
 
 @mixin lg {
-  @media (max-width: map-get($breakpoints, 'lg')) {
+  @media (min-width: map-get($breakpoints, 'lg')) {
     @content;
   }
 }
 
 @mixin xl {
-  @media (max-width: map-get($breakpoints, 'xl')) {
+  @media (min-width: map-get($breakpoints, 'xl')) {
     @content;
   }
 }
 
 @mixin breakpoint($bp: 0) {
-  @media (max-width: $bp) {
+  @media (min-width: $bp) {
     @content;
   }
 }
