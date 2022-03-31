@@ -3,7 +3,7 @@ import { AiOutlinePlus } from 'react-icons/ai'
 import faqsJson from '../../fixtures/faqs.json'
 
 export default function Accordion({ children }) {
-  const [toggle, setToggle] = useState(false)
+  const [isActive, setIsActive] = useState(false)
 
   return (
     <div className='home_page_card'>
@@ -12,26 +12,29 @@ export default function Accordion({ children }) {
           <h1 className="home_card_title">
             Frequently Asked Questions
           </h1>
-
-
           <ul className="faq_list">
-            {
-              faqsJson.map(faq => (
-                <li
-                  key={faq.id}
-                  className="faq_list_item">
-                  <button
-                    onClick={() => setToggle(true)}
-                    className="faq_question">
-                    {faq.header}
-                    {<AiOutlinePlus className='plus_icon' />}
-                  </button>
-                  <div className="faq_answer">
-                    <span>{faq.body}</span>
-                  </div>
-                </li>
-              ))
-            }
+            {faqsJson.map((faq, i) => (
+              <li
+                key={faq.id}
+                className="faq_list_item">
+
+                <button
+                  onClick={() => isActive === i ? setIsActive(false) : setIsActive(i)}
+                  className="faq_question">
+                  {faq.header}
+                  <span className={isActive === i ? 'active_faq faq_question_icon' : 'faq_question_icon'}>
+                    <AiOutlinePlus />
+                  </span>
+                </button>
+
+                <div className={isActive === i ? 'faq_open faq_body_content' : 'faq_close faq_body_content'}>
+                  <span className='faq_body'>
+                    {faq.body}
+                  </span>
+                </div>
+
+              </li>
+            ))}
           </ul>
         </div>
         {children}

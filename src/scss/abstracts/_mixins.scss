@@ -23,6 +23,12 @@ $breakpoints: (
   }
 }
 
+@mixin monitor {
+  @media (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'lg')) {
+    @content;
+  }
+}
+
 @mixin mediumDevices {
   @media (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'xl')) {
     @content;

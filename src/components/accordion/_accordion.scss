@@ -1,23 +1,54 @@
 .faq_wrapper {
   text-align: center;
-  margin: 0 auto;
-  .faq_list {
-    max-width: 815px;
+
+  .home_card_title {
+    margin: 0 0 0.4em;
   }
 
-  .faq_question {
-    padding: 0.8em 2.2em 0.8em 1.2em;
-    margin-bottom: 1px;
-    cursor: pointer;
-    font-weight: 400;
-    position: relative;
-    width: 100%;
-    border: 0;
-    text-align: left;
-    background: #303030;
-    color: inherit;
+  .faq_list {
+    max-width: 815px;
+    margin: 0 auto;
 
-    .plus_icon {
+    @include smallDevices {
+      margin: 1.25em auto;
+    }
+
+    @include monitor {
+      width: 90%;
+      margin: 1.5em auto;
+    }
+
+    @include lg {
+      width: 75%;
+      margin: 2em auto;
+    }
+
+    .faq_list_item {
+      margin: 0 0 8px 0;
+    }
+
+    // 950
+    //     width: 75%;
+    // margin: 2em auto;
+
+    // between 950 & 550
+    // width: 90%;
+    // margin: 1.5em auto;
+
+    .faq_question {
+      font-size: 2rem;
+      padding: 0.8em 2.2em 0.8em 1.2em;
+      margin-bottom: 1px;
+      cursor: pointer;
+      font-weight: 400;
+      position: relative;
+      width: 100%;
+      border: 0;
+      text-align: left;
+      background: $accordion-backdrop;
+      color: inherit;
+    }
+    .faq_question_icon {
       position: absolute;
       right: 1em;
       top: 50%;
@@ -28,6 +59,38 @@
       transform: translateY(-50%);
       height: 1em;
       width: 1em;
+    }
+
+    .active_faq {
+      transform: translateY(-50%) rotate(-45deg);
+    }
+
+    .faq_body_content {
+      display: block;
+      text-align: left;
+      .faq_body {
+        background-color: $accordion-backdrop;
+        display: inline-block;
+        padding: 1.2em;
+        text-align: left;
+      }
+    }
+
+    .faq_close {
+      max-height: 0;
+      overflow: hidden;
+      -webkit-transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+      -o-transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+      -moz-transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+      transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+    }
+
+    .faq_open {
+      max-height: 1200px;
+      webkit-transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+      -o-transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+      -moz-transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+      transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
     }
   }
 }
