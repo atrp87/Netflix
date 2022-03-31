@@ -1,13 +1,11 @@
-// misc
 @import '../scss/abstracts/variables';
 @import '../scss/abstracts/mixins';
+
 @import '../scss/base/base';
 @import '../scss/base/typography';
 
-// pages
-@import '../pages/home/home';
+@import '../scss/pages/home';
 
-// components
 @import '../components/header/header';
 @import '../components/hero/hero';
 @import '../components/cta-form/ctaForm/';

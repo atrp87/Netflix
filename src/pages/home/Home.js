@@ -16,7 +16,9 @@ export default function Home() {
         </Hero>
 
         <Jumbotron />
-        {/* <Accordion /> */}
+        <Accordion>
+          {/* <CtaForm /> */}
+        </Accordion>
 
         {/* <Footer /> */}
       </div>

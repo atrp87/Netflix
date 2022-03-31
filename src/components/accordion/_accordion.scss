@@ -1,0 +1,33 @@
+.faq_wrapper {
+  text-align: center;
+  margin: 0 auto;
+  .faq_list {
+    max-width: 815px;
+  }
+
+  .faq_question {
+    padding: 0.8em 2.2em 0.8em 1.2em;
+    margin-bottom: 1px;
+    cursor: pointer;
+    font-weight: 400;
+    position: relative;
+    width: 100%;
+    border: 0;
+    text-align: left;
+    background: #303030;
+    color: inherit;
+
+    .plus_icon {
+      position: absolute;
+      right: 1em;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      height: 1em;
+      width: 1em;
+    }
+  }
+}

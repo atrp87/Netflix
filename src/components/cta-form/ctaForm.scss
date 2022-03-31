@@ -1,89 +1,122 @@
 .cta_form {
-  position: relative;
-  text-align: center;
   z-index: 999;
   max-width: 1500px;
-  padding-top: 0.85rem;
+  padding-top: 0.8rem;
 
   h3 {
-    max-width: none;
-    padding-bottom: 20px;
+    padding: 0 2%;
+    max-width: 450px;
+    margin: 0 auto;
     font-weight: 400;
-    font-size: 1.2rem;
 
     @include lg {
+      max-width: none;
+      padding-bottom: 20px;
+      font-size: 1.2rem;
+    }
+
+    @include formTxt {
       padding: 0 10%;
     }
   }
 
-  .cta_form_content {
+  .cta_form_lockup {
     display: flex;
-    justify-content: center;
     margin: 0 auto;
     max-width: 1000px;
+    align-items: center;
 
-    @include lg {
+    @include lg-max {
       flex-direction: column;
+      max-width: 500px;
     }
 
-    .cta_input_container {
-      span {
-        position: absolute;
-        font-size: 16px;
-        top: 1%;
-        // left: 10px;
-        color: #8c8c8c;
+    label {
+      @include md-max {
+        min-width: 100%;
+        width: 100%;
       }
-      input {
-        height: 60px;
-        min-width: 450px;
+    }
+
+    input {
+      padding: 20px 10px;
+      height: 60px;
+      min-width: 450px;
+
+      @include md-max {
+        height: 48px;
+        min-width: 100%;
+        width: 100%;
+      }
+
+      @include xl-max {
+        margin: 10px auto;
+      }
+
+      @include lg {
+        margin: 10px auto;
         -webkit-border-bottom-right-radius: 0;
         -moz-border-radius-bottomright: 0;
         border-bottom-right-radius: 0;
         -webkit-border-top-right-radius: 0;
         -moz-border-radius-topright: 0;
         border-top-right-radius: 0;
-
-        @include md {
-          height: 48px;
-        }
-
-        @include lg {
-          margin: 10px auto;
-        }
+        border-right: 1px solid #333;
       }
     }
+    input::placeholder {
+      color: $place_label;
+      font-size: 15px;
+    }
+  }
 
-    .cta_submit_btn_container {
+  .cta_submit_btn_container {
+    margin-bottom: 0.27rem;
+    @include lg {
+      align-items: center;
+      margin-top: 0.4rem;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      @include btn;
+
       @include lg {
-        margin-top: 0.4rem;
-      }
-
-      button {
-        @include btn;
-        border-left: 1px solid #333;
         -webkit-border-bottom-left-radius: 0;
         -moz-border-radius-bottomleft: 0;
         border-bottom-left-radius: 0;
         -webkit-border-top-left-radius: 0;
         -moz-border-radius-topleft: 0;
         border-top-left-radius: 0;
+        border-left: 1px solid #333;
         font-size: 1.625rem;
         min-height: 60px;
-        box-shadow: 0 1px 0 rgb(0, 0, 0 / 45%);
-        padding: 0 1rem;
+        padding: 0 1em;
+      }
 
-        @include lg {
-          font-size: 1rem;
-          min-height: 40px;
+      @include lg-max {
+        font-size: 1rem;
+        min-height: 40px;
+        padding: 0 1em;
+      }
+
+      .chevron-right-arrow {
+        padding-top: 0.5rem;
+
+        @include lg-max {
+          padding-top: 0.25rem;
         }
       }
+
+      .cta-btn-txt {
+        padding: 0.5rem 0;
+      }
+
+      // @include lg {
+      //   font-size: 1rem;
+      //   min-height: 40px;
+      // }
     }
   }
 }
-
-// :hover
-// :dry code
-// before / after
-// line up input and arrow
-// place holder absolute

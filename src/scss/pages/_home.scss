@@ -9,6 +9,7 @@
     position: relative;
     padding: 70px 45px;
     border-bottom: $border-bottom-dark;
+    z-index: 2;
     margin-bottom: 0;
 
     @include sm {

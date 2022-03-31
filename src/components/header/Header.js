@@ -10,7 +10,7 @@ export default function Header() {
           alt="Netflix logo"
           className='svg-nfLogo'
         />
-        <Link to='signin' className='authLinks'>Sign In</Link>
+        <Link to='Login' className='authLinks'>Sign In</Link>
       </div>
     </header>
   )
