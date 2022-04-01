@@ -22,6 +22,7 @@
 - [React](https://reactjs.org/) - version 17.0.2
 - [Firebase](https://firebase.google.com/) - version
 - [React](https://reactrouterdotcom.fly.dev/docs/en/v6) - version 6
+- [Axios](https://www.npmjs.com/package/axios) - version 0.26.1
 - [Scss](https://sass-lang.com/) - version 1.49.9
 
 
@@ -56,6 +57,7 @@ Project is: _In Development_
 ## Acknowledgements
 
 - This project was based on [Netflix](https://www.netflix.com/gb/).
+- The project API used [TMDB](https://www.themoviedb.org/).
 
 ## Contact
 Created by [drewpeattie@hotmail.com](mailto:drewpeattie@hotmail.com) - feel free to contact me!
