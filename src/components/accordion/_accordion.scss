@@ -2,7 +2,7 @@
   text-align: center;
 
   .home_card_title {
-    margin: 0 0 0.4em;
+    margin: 0 0 1em;
   }
 
   .faq_list {
@@ -20,20 +20,12 @@
 
     @include lg {
       width: 75%;
-      margin: 2em auto;
+      margin: 4em auto;
     }
 
     .faq_list_item {
       margin: 0 0 8px 0;
     }
-
-    // 950
-    //     width: 75%;
-    // margin: 2em auto;
-
-    // between 950 & 550
-    // width: 90%;
-    // margin: 1.5em auto;
 
     .faq_question {
       font-size: 2rem;
@@ -47,6 +39,11 @@
       text-align: left;
       background: $accordion-backdrop;
       color: inherit;
+      font-size: 1.625rem;
+
+      @include md-max {
+        font-size: 1.125rem;
+      }
     }
     .faq_question_icon {
       position: absolute;
@@ -68,11 +65,18 @@
     .faq_body_content {
       display: block;
       text-align: left;
+
       .faq_body {
         background-color: $accordion-backdrop;
         display: inline-block;
         padding: 1.2em;
         text-align: left;
+        font-size: 1.625rem;
+        font-weight: 400;
+
+        @include md-max {
+          font-size: 1.25rem;
+        }
       }
     }
 

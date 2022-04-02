@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className='home_page_card footer_card'>
       <div className="footer_wrapper">
-        <p>Questions? Contact us.</p>
+        <p className='footer_top'>Questions? Contact us.</p>
 
         <div className="footer_row">
           <div className="col">
@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p>Netflix United Kingdom</p>
+        <p className='footer_country'>Netflix United Kingdom</p>
       </div>
     </footer >
   )

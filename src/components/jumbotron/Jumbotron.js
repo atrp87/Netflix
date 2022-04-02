@@ -1,19 +1,6 @@
 import jumboJson from '../../fixtures/jumbo.json'
 
 export default function Jumbotron() {
-
-  //   const myStyle = {
-  //     paddingRight: 'padding: 0 3rem 0 0',
-  //     paddingLeft: 'padding: 0 3rem 0 0',
-  //     marginLeft: '-8% 0 -4% -15%',
-  //     marginRight: '-8% 0 -4% -15%',
-  //   }
-
-  //   margin: -10% -5% -5% 0
-  //   margin: -8% 0 -4% -15%
-  //   margin: -5% -10% 0 0
-  // }
-
   return (
     <>
       {

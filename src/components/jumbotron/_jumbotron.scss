@@ -67,10 +67,6 @@
       }
 
       @include mediumDevices {
-        font-size: 1.25rem;
-      }
-
-      @include xl {
         font-size: 1.625rem;
       }
     }

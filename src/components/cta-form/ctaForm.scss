@@ -2,6 +2,7 @@
   z-index: 999;
   max-width: 1500px;
   padding-top: 0.8rem;
+  margin: 0 auto;
 
   h3 {
     padding: 0 2%;
@@ -23,6 +24,7 @@
   .cta_form_lockup {
     display: flex;
     margin: 0 auto;
+    justify-content: center;
     max-width: 1000px;
     align-items: center;
 
@@ -40,11 +42,12 @@
 
     input {
       padding: 20px 10px;
-      height: 60px;
+      height: 62px;
       min-width: 450px;
+      border: 0;
 
       @include md-max {
-        height: 48px;
+        height: 49px;
         min-width: 100%;
         width: 100%;
       }
@@ -55,12 +58,6 @@
 
       @include lg {
         margin: 10px auto;
-        -webkit-border-bottom-right-radius: 0;
-        -moz-border-radius-bottomright: 0;
-        border-bottom-right-radius: 0;
-        -webkit-border-top-right-radius: 0;
-        -moz-border-radius-topright: 0;
-        border-top-right-radius: 0;
         border-right: 1px solid #333;
       }
     }
@@ -93,6 +90,10 @@
         font-size: 1.625rem;
         min-height: 60px;
         padding: 0 1em;
+
+        &:hover {
+          background-color: #ff0915;
+        }
       }
 
       @include lg-max {
@@ -110,7 +111,7 @@
       }
 
       .cta-btn-txt {
-        padding: 0.5rem 0;
+        padding: 1rem 0;
       }
 
       // @include lg {

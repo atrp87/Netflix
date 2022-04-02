@@ -39,6 +39,6 @@ export default function Accordion({ children }) {
         </div>
         {children}
       </div>
-    </div>
+    </div >
   )
 }

@@ -4,10 +4,12 @@
 @import '../scss/base/base';
 @import '../scss/base/typography';
 
-@import '../scss/pages/home';
+@import './pages/home';
+@import './pages/login';
 
 @import '../components/header/header';
 @import '../components/hero/hero';
 @import '../components/cta-form/ctaForm/';
 @import '../components/jumbotron/jumbotron';
 @import '../components/accordion/accordion';
+@import '../components/footer/footer';

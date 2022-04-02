@@ -1,12 +1,54 @@
 .footer_card {
   border-bottom: 0 !important;
+  color: #757575;
+  max-width: 1000px;
+  margin: 0 auto;
 
   .footer_wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
+    @include sm-max {
+      text-align: left;
+    }
+    .footer_top {
+      margin: 0 0 30px;
+    }
+    .footer_country {
+      font-size: 13px;
+      margin-top: 24px;
+    }
 
     .footer_row {
-      .footer_col {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 85%;
+
+      @include sm-max {
+        width: 100%;
+      }
+
+      @include md {
+        width: 95%;
+      }
+
+      .col {
+        display: flex;
+        flex-direction: column;
+
+        @include sm-max {
+          width: 40%;
+        }
+
+        @include md-max {
+          margin-right: 1rem;
+        }
+      }
+      a {
+        color: #757575;
+        margin-bottom: 16px;
+        font-size: 13px;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
