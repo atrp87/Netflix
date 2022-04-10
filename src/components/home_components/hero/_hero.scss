@@ -11,10 +11,19 @@
     max-width: 640px;
     margin: 0 auto;
     padding-top: 75px;
+
+    .hero_card_title {
+      line-height: 1.1;
+    }
+
+    .hero_card_subtitle {
+      margin: 1rem auto;
+      font-weight: 400;
+    }
   }
 
   .hero_card_background {
-    background-image: url('../../../public/images/misc/home_bg.jpeg');
+    background-image: url('../../../../public/images/misc/home_bg.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;

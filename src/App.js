@@ -1,8 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
 import './scss/style.scss'
-import React from 'react'
+
 
 export default function App() {
   return (
@@ -15,14 +16,14 @@ export default function App() {
         <Route
           path='/Login'
           element={<Login />} />
-        {/* <Route
-          path='/signup/:id'
-          element={<SignUp />}
-        /> */}
-        {/* <Route
-          path='/browse'
-          element={<Browse />}
-        /> */}
+        <Route
+          path='/signup'
+          element={<Signup />} // add params :id
+        />
+        <Route
+        // path='/browse'
+        // element={<Browse />}
+        />
       </Routes>
     </div>
   );

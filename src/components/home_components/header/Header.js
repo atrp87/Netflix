@@ -1,4 +1,4 @@
-import nfLogo from '../../assets/logo_netflix.svg'
+import nfLogo from '../../../assets/logo_netflix.svg'
 import { Link } from 'react-router-dom'
 
 export default function Header() {

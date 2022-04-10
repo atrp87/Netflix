@@ -1,26 +1,24 @@
 .faq_wrapper {
   text-align: center;
 
-  .home_card_title {
+  .faq_card_title {
     margin: 0 0 1em;
+    line-height: 1.1;
+    font-size: 1.625rem;
   }
 
   .faq_list {
     max-width: 815px;
-    margin: 0 auto;
+    margin: 1.25em auto;
 
-    @include smallDevices {
-      margin: 1.25em auto;
-    }
-
-    @include monitor {
+    @include for_tablet_portrait_up {
       width: 90%;
       margin: 1.5em auto;
     }
 
-    @include lg {
+    @include for_tablet_landscape_up {
       width: 75%;
-      margin: 4em auto;
+      margin: 2em auto;
     }
 
     .faq_list_item {
@@ -28,7 +26,7 @@
     }
 
     .faq_question {
-      font-size: 2rem;
+      font-size: 1.125rem;
       padding: 0.8em 2.2em 0.8em 1.2em;
       margin-bottom: 1px;
       cursor: pointer;
@@ -39,10 +37,9 @@
       text-align: left;
       background: $accordion-backdrop;
       color: inherit;
-      font-size: 1.625rem;
 
-      @include md-max {
-        font-size: 1.125rem;
+      @include for_tablet_landscape_up {
+        font-size: 1.625rem;
       }
     }
     .faq_question_icon {
@@ -67,15 +64,16 @@
       text-align: left;
 
       .faq_body {
+        white-space: pre-line;
         background-color: $accordion-backdrop;
         display: inline-block;
         padding: 1.2em;
         text-align: left;
-        font-size: 1.625rem;
+        font-size: 1.125rem;
         font-weight: 400;
 
-        @include md-max {
-          font-size: 1.25rem;
+        @include for_tablet_landscape_up {
+          font-size: 1.625rem;
         }
       }
     }

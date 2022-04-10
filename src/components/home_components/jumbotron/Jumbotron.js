@@ -1,4 +1,4 @@
-import jumboJson from '../../fixtures/jumbo.json'
+import jumboJson from '../../../fixtures/jumbo.json'
 
 export default function Jumbotron() {
   return (

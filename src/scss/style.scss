@@ -5,11 +5,11 @@
 @import '../scss/base/typography';
 
 @import './pages/home';
-@import './pages/login';
+@import './pages/login__signup';
 
-@import '../components/header/header';
-@import '../components/hero/hero';
-@import '../components/cta-form/ctaForm/';
-@import '../components/jumbotron/jumbotron';
-@import '../components/accordion/accordion';
-@import '../components/footer/footer';
+@import '../components/home_components/header/header';
+@import '../components/home_components/hero/hero';
+@import '../components/home_components/cta_form/ctaForm';
+@import '../components/home_components/jumbotron/jumbotron';
+@import '../components/home_components/accordion/accordion';
+@import '../components/home_components/footer/footer';

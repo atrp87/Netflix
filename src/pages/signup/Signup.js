@@ -3,7 +3,7 @@ import nfLogo from '../../assets/logo_netflix.svg';
 import FormInput from '../../components/form/FormInput';
 import Form from '../../components/form/Form';
 
-export default function Login() {
+export default function Signup() {
   return (
     <div className="hybrid_wrapper">
       <div className="hybrid_background"></div>
@@ -19,7 +19,7 @@ export default function Login() {
         <div className="hybrid_auth_body">
           <div className="hybrid_auth_content">
             <h1 className="hybrid_auth_page_title">
-              Sign In
+              Sign Up
             </h1>
             <div className="hybrid_form">
               <Form
@@ -38,13 +38,18 @@ export default function Login() {
                   type="password"
                   placeholder='Password'
                 />
-                <button className="hybrid_auth_button">Sign In</button>
+                <FormInput
+                  name="Password"
+                  type="password"
+                  placeholder='Password'
+                />
+                <button className="hybrid_auth_button">Sign Up</button>
               </Form>
             </div>
             <div className="hybrid_auth_social">
               <div className="hybrid_auth_action">
-                New to Netflix?
-                <Link to='/signup'> Sign up now</Link>
+                Already a member?
+                <Link to='/login'> Sign In</Link>
               </div>
               <div className="terms_of_use">
                 <p>

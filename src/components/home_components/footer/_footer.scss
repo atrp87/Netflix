@@ -5,9 +5,6 @@
   margin: 0 auto;
 
   .footer_wrapper {
-    @include sm-max {
-      text-align: left;
-    }
     .footer_top {
       margin: 0 0 30px;
     }
@@ -20,29 +17,31 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      width: 85%;
+      width: 100%;
 
-      @include sm-max {
-        width: 100%;
-      }
-
-      @include md {
-        width: 95%;
+      @include for_tablet_portrait_mid_up {
+        width: 85%;
       }
 
       .col {
         display: flex;
         flex-direction: column;
+        width: 50%;
 
-        @include sm-max {
+        @include for_phone_only {
           width: 40%;
         }
 
-        @include md-max {
-          margin-right: 1rem;
+        @include for_tablet_portrait_up {
+          width: 30%;
+        }
+
+        @include for_tablet_portrait_mid_up {
+          width: 0%;
         }
       }
       a {
+        white-space: nowrap;
         color: #757575;
         margin-bottom: 16px;
         font-size: 13px;

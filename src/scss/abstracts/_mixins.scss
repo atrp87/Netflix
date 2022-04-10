@@ -1,101 +1,61 @@
-// btns
-@mixin btn() {
-  background-color: $color-red;
+// buttons
+@mixin auth_btn() {
+  background: $color_red;
   cursor: pointer;
   border: 0;
-  color: $color-white;
+  color: $color_white;
 }
 
-$breakpoints: (
-  'xs': 0,
-  'sm': 550px,
-  'form_txt': 400px,
-  'md': 750px,
-  'lg': 950px,
-  'xl': 1450px,
-);
+// Breakpoints
+// $breakpoints: (
+//   'xs': 400px,
+//   'sm': 550px,
+//   'md': 750px,
+//   'lg': 949px,
+//   'xl': 1449px,
+//   'xl_up': 1450px,
+// );
 
-// Home Text Title
-
-@mixin smallDevices {
-  @media (max-width: map-get($breakpoints, 'sm')) {
-    @content;
-  }
-}
-
-@mixin monitor {
-  @media (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'lg')) {
-    @content;
-  }
-}
-
-@mixin mediumDevices {
-  @media (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'xl')) {
-    @content;
-  }
-}
-
-@mixin formTxt {
-  @media (min-width: map-get($breakpoints, 'form_txt')) and (max-width: map-get($breakpoints, 'lg')) {
-    @content;
-  }
-}
-
-@mixin xs {
-  @media (min-width: map-get($breakpoints, 'xs')) {
-    @content;
-  }
-}
-
-@mixin sm {
-  @media (min-width: map-get($breakpoints, 'sm')) {
-    @content;
-  }
-}
-
-@mixin sm-max {
-  @media (max-width: map-get($breakpoints, 'sm')) {
-    @content;
-  }
-}
-
-@mixin md {
-  @media (min-width: map-get($breakpoints, 'md')) {
-    @content;
-  }
-}
-
-@mixin md-max {
-  @media (max-width: map-get($breakpoints, 'md')) {
-    @content;
-  }
-}
-
-@mixin lg {
-  @media (min-width: map-get($breakpoints, 'lg')) {
-    @content;
-  }
-}
-@mixin lg-max {
-  @media (max-width: map-get($breakpoints, 'lg')) {
-    @content;
-  }
-}
-
-@mixin xl-max {
-  @media (max-width: map-get($breakpoints, 'lg')) {
-    @content;
-  }
-}
-
-@mixin xl {
-  @media (min-width: map-get($breakpoints, 'xl')) {
-    @content;
-  }
-}
-
-@mixin breakpoint($bp: 0) {
+@mixin min_custom_breakpoint($bp: 0) {
   @media (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin max_custom_breakpoint($bp: 0) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+@mixin for_phone_only {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+@mixin for_tablet_portrait_up {
+  @media (min-width: 550px) {
+    @content;
+  }
+}
+
+@mixin for_tablet_portrait_mid_up {
+  @media (min-width: 750px) {
+    @content;
+  }
+}
+@mixin for_tablet_landscape_up {
+  @media (min-width: 950px) {
+    @content;
+  }
+}
+@mixin for_desktop_up {
+  @media (min-width: 1449px) {
+    @content;
+  }
+}
+@mixin for_big_desktop {
+  @media (min-width: 1450px) {
     @content;
   }
 }

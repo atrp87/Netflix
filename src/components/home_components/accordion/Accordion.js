@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { AiOutlinePlus } from 'react-icons/ai'
-import faqsJson from '../../fixtures/faqs.json'
+import faqsJson from '../../../fixtures/faqs.json'
 
 export default function Accordion({ children }) {
   const [isActive, setIsActive] = useState(false)
@@ -9,7 +9,7 @@ export default function Accordion({ children }) {
     <div className='home_page_card'>
       <div className="faq_wrapper">
         <div className="faq_card_text">
-          <h1 className="home_card_title">
+          <h1 className="faq_card_title">
             Frequently Asked Questions
           </h1>
           <ul className="faq_list">
