@@ -1,9 +1,25 @@
 import { Link } from 'react-router-dom';
 import nfLogo from '../../assets/logo_netflix.svg';
-import FormInput from '../../components/form/FormInput';
-import Form from '../../components/form/Form';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../firebase/firebase'
 
 export default function Signup() {
+
+  const userSignupHandler = (e) => {
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
+  }
+
   return (
     <div className="hybrid_wrapper">
       <div className="hybrid_background"></div>
@@ -22,29 +38,41 @@ export default function Signup() {
               Sign Up
             </h1>
             <div className="hybrid_form">
-              <Form
-                onSubmit={{}}
-                formInitialValues={{
-                  emailAddress: '',
-                  password: ''
-                }}>
-                <FormInput
-                  type='email'
-                  name="emailAddress"
-                  placeholder='Email'
-                />
-                <FormInput
-                  name="Password"
-                  type="password"
-                  placeholder='Password'
-                />
-                <FormInput
-                  name="Password"
-                  type="password"
-                  placeholder='Password'
-                />
-                <button className="hybrid_auth_button">Sign Up</button>
-              </Form>
+              <form >
+                <div className="form_input">
+                  <input
+                    type='email'
+                    name="email"
+                    placeholder='Email'
+                  // onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="form_input">
+                  <input
+                    type='email'
+                    name="email"
+                    placeholder='Email'
+                  // onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="form_input">
+                  <input
+                    name="password"
+                    type="password"
+                    placeholder='Password'
+                  // onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+                <div className="form_input">
+                  <input
+                    name="password"
+                    type="password"
+                    placeholder='Password'
+                  // onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+                <button className="hybrid_auth_button">Sign In</button>
+              </form>
             </div>
             <div className="hybrid_auth_social">
               <div className="hybrid_auth_action">

@@ -1,0 +1,11 @@
+.vid {
+  display: flex;
+  width: 200px;
+  .vid_content {
+    display: flex;
+  }
+
+  img {
+    width: 100%;
+  }
+}

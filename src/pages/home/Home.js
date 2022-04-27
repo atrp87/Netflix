@@ -1,9 +1,9 @@
-import Header from '../../components/home_components/header/Header'
-import Hero from '../../components/home_components/hero/Hero'
-import CtaForm from '../../components/home_components/cta_form/CtaForm'
-import Jumbotron from '../../components/home_components/jumbotron/Jumbotron'
-import Accordion from '../../components/home_components/accordion/Accordion'
-import Footer from '../../components/home_components/footer/Footer'
+import Header from '../../components/home/header/Header'
+import Hero from '../../components/home/hero/Hero'
+import CtaForm from '../../components/home/cta_form/CtaForm'
+import Jumbotron from '../../components/home/jumbotron/Jumbotron'
+import Accordion from '../../components/home/accordion/Accordion'
+import Footer from '../../components/home/footer/Footer'
 
 
 export default function Home() {
