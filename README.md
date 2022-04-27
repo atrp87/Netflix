@@ -20,7 +20,7 @@
 
 ## Technologies Used
 - [React](https://reactjs.org/) - version 17.0.2
-- [Firebase](https://firebase.google.com/) - version
+- [Firebase](https://firebase.google.com/) - version 9
 - [React](https://reactrouterdotcom.fly.dev/docs/en/v6) - version 6
 - [Axios](https://www.npmjs.com/package/axios) - version 0.26.1
 - [Scss](https://sass-lang.com/) - version 1.49.9
