@@ -9,6 +9,7 @@
 * [MVP](#MVP)
 * [Additional Features](#Additional-Features)
 * [Screenshots](#screenshots)
+* [Screenshots](#screenshots)
 * [Setup](#setup)
 * [Project Status](#project-status)
 * [Acknowledgements](#acknowledgements)
@@ -52,6 +53,10 @@
 - The user can edit account and avatar
 - The user can select and play movies
 - The user can make subscribe using a payment system
+
+
+## Screenshots
+![Project Angela Gif](COVID_App.gif)
 
 
 ## Setup
