@@ -9,7 +9,6 @@
 * [MVP](#MVP)
 * [Additional Features](#Additional-Features)
 * [Screenshots](#screenshots)
-* [Screenshots](#screenshots)
 * [Setup](#setup)
 * [Project Status](#project-status)
 * [Acknowledgements](#acknowledgements)
@@ -56,7 +55,13 @@
 
 
 ## Screenshots
-![Project Angela Gif](COVID_App.gif)
+#### Home Page
+![Netflix home gif](nf_home.gif)
+#### Browse Page
+![Netflix browse gif](nf_browse.gif)
+
+#### Featured Film
+![featured page image](nf_featured.png)
 
 
 ## Setup
