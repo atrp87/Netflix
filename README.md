@@ -1,5 +1,5 @@
-# Netflix
-> Netflix clone web app built with React, Firebase & SCSS.
+# Netflix ( React-dom )
+> A responsive and dynamic Netflix web app built with React, Firebase & SCSS.
 > Live demo [_here_]().
 
 ## Table of Contents
