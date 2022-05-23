@@ -14,18 +14,21 @@ export default function Login() {
 
   const { dispatch } = useContext(AuthContext)
 
-  const userLoginHandler = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault()
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
 
         const user = userCredential.user;
+
         dispatch({ type: 'LOGIN', payload: user })
-        navigate('/films')
+        navigate('/browse')
+
       })
 
       .catch((error) => {
+        // setError
         const errorCode = error.code;
         const errorMessage = error.message;
       });
@@ -51,7 +54,7 @@ export default function Login() {
               Sign In
             </h1>
             <div className="hybrid_form">
-              <form onSubmit={userLoginHandler}>
+              <form onSubmit={handleLogin}>
                 <div className="form_input">
                   <input
                     type='email'

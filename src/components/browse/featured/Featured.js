@@ -1,33 +1,32 @@
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { BsPlayFill } from 'react-icons/bs'
+import { useTitle } from '../../../hooks/useTitle'
 
+export default function Featured({ title, overview, background, tabTitle }) {
 
-
-export default function Featured({ title, overview }) {
+  useTitle(tabTitle)
 
   return (
-    <div className="featured_bg">
-      <div className="featured_content">
-        <div className="featured_img_container">
-          <img src={title} alt="" />
-        </div>
-        <div className="featured_overview">
-          <p>
-            {overview}
-          </p>
-        </div>
-        <div className="featured_btns">
-          <button>
-            <span>
-              <BsPlayFill />
-            </span>
-            Play
+
+
+    <div className="featured_background">
+      <img src={background} alt={overview} />
+      <div className="info">
+        <img
+          src={title}
+          alt={overview}
+        />
+        <span className="desc">
+          {overview}
+        </span>
+        <div className="buttons">
+          <button className="play">
+            <BsPlayFill />
+            <span>Play</span>
           </button>
-          <button>
-            <span>
-              <AiOutlineInfoCircle />
-            </span>
-            More Info
+          <button className="more">
+            <AiOutlineInfoCircle />
+            <span>More Info</span>
           </button>
         </div>
       </div>

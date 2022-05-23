@@ -47,13 +47,10 @@
         margin-right: 20px;
         cursor: pointer;
 
-        a {
+        &:hover {
+          font-weight: 700;
+          color: $color-white;
           color: #e5e5e5;
-
-          &:hover {
-            font-weight: 700;
-            color: $color-white;
-          }
         }
       }
 
@@ -87,6 +84,7 @@
 
             span {
               padding: 10px 20px;
+              height: 55px;
               border: solid 1px rgba(255, 255, 255, 0.15);
               margin: 0;
             }
@@ -136,6 +134,14 @@
           border-bottom: solid 1px rgba(255, 255, 255, 0.15);
           padding: 20px;
           justify-content: space-around;
+          cursor: default;
+          &:hover {
+            text-decoration: none;
+          }
+
+          img {
+            cursor: default;
+          }
         }
 
         .options span:nth-of-type(2),

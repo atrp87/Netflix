@@ -1,26 +1,35 @@
 import { useState, useEffect } from 'react'
+import axios from '../services/axios'
 
-export const useFetch = (url) => {
+export const useFetch = (urls) => {
   const [data, setData] = useState(null)
   const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState(null)
 
   useEffect(() => {
+    const controller = new AbortController()
+
     const fetchData = async () => {
       setIsPending(true)
 
       try {
-        const res = await fetch(url)
-        if (!res.ok) {
+        const res = await axios.get(urls, {
+          signal: controller
+            .signal
+        })
+
+        if (!res.data || res.data.length === 0) {
           throw new Error(res.status.text)
         }
-        const resJson = await res.json()
 
+        setData(res.data.results.splice(0, 6))
         setIsPending(false)
-        setData(resJson)
         setError(null)
 
       } catch (err) {
+        if (err.name === 'AbortError') {
+          console.log('the fetch was aborted');
+        }
         setError('Could not fetch media list')
         console.log(err.message);
         setIsPending(false)
@@ -28,7 +37,11 @@ export const useFetch = (url) => {
     }
 
     fetchData()
-  }, [url])
+
+    return () => {
+      controller.abort()
+    }
+  }, [urls])
 
   return { data, isPending, error }
 

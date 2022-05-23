@@ -2,22 +2,37 @@ import { Link } from 'react-router-dom';
 import nfLogo from '../../assets/logo_netflix.svg';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../firebase/firebase'
+import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext'
 
 export default function Signup() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-  const userSignupHandler = (e) => {
+  const { dispatch } = useContext(AuthContext)
+  const navigate = useNavigate()
+
+  const handleSignup = (e) => {
+    e.preventDefault()
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in 
+
+
         const user = userCredential.user;
-        // ...
+
+
+        dispatch({ type: 'LOGIN', payload: user })
+        navigate('/browse')
+
+        // check uid and reference user my list
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      });
+      .catch((err) => {
+        console.log(err.message);
+        // output password length wrong
+      })
+
   }
 
   return (
@@ -38,21 +53,13 @@ export default function Signup() {
               Sign Up
             </h1>
             <div className="hybrid_form">
-              <form >
+              <form onSubmit={handleSignup}>
                 <div className="form_input">
                   <input
                     type='email'
                     name="email"
                     placeholder='Email'
-                  // onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div className="form_input">
-                  <input
-                    type='email'
-                    name="email"
-                    placeholder='Email'
-                  // onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="form_input">
@@ -60,17 +67,17 @@ export default function Signup() {
                     name="password"
                     type="password"
                     placeholder='Password'
-                  // onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                <div className="form_input">
+                {/* <div className="form_input">
                   <input
                     name="password"
                     type="password"
                     placeholder='Password'
-                  // onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
-                </div>
+                </div> */}
                 <button className="hybrid_auth_button">Sign In</button>
               </form>
             </div>

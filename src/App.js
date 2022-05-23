@@ -1,22 +1,19 @@
-
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
-import Series from './pages/series/Series'
-import Films from './pages/films/Films'
-import MyList from './pages/my_list/MyList'
+import Browse from './pages/browse/Browse';
 import './scss/style.scss'
 import { AuthContext } from './context/AuthContext'
 import { useContext } from 'react'
+import PageNotFound from './pages/404/PageNotFound'
 
 export default function App() {
-
   const { currentUser } = useContext(AuthContext)
 
-  const RequireAuth = ({ Children }) => {
-    return currentUser ? (Children) : <Navigate to='/login' />
-  }
+  // const RequireAuth = ({ Children }) => {
+  //   return currentUser ? (Children) : <Navigate to='/login' />
+  // }
 
   return (
     <div className="App">
@@ -33,17 +30,12 @@ export default function App() {
           element={<Signup />}
         />
         <Route
-          path='/series'
-          element={<Series />}
+          path='/browse'
+          element={
+            currentUser ? <Browse /> : <Navigate to='/login' />
+          }
         />
-        <Route
-          path='/films'
-          element={<Films />}
-        />
-        <Route
-          path='/mylist'
-          element={<MyList />}
-        />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );

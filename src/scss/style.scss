@@ -6,7 +6,8 @@
 
 // PAGES
 @import './pages/home';
-@import './pages/login_signup';
+@import './pages/auth_forms';
+@import './pages/pageNotFound.scss';
 
 // HOME
 @import '../components/home/header/header';
@@ -19,4 +20,9 @@
 // BROWSE
 @import '../components/browse/navbar/navbar';
 @import '../components/browse/featured/featured';
-@import '../components/browse/media_list/medialist';
+@import '../components/browse/row/row';
+@import '../components/browse/card/card';
+@import '../components/browse/pending/pending';
+@import '../components/browse/favorites/favorites';
+@import '../components/browse/modal/modal';
+@import '../components/browse/account/account';

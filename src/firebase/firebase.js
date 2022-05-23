@@ -4,6 +4,7 @@ import { getFirestore } from 'firebase/firestore'
 
 // web app's Firebase configuration
 const firebaseConfig = {
+  // process.env.REACT_FIREBASE_KEY
   apiKey: "AIzaSyDjCoSFr4_5ehtfTY4Pg6ByzlAZTXRihc4",
   authDomain: "netflix-react-2578c.firebaseapp.com",
   projectId: "netflix-react-2578c",
