@@ -1,6 +1,6 @@
 # Netflix ( React-dom )
 
-> A responsive and dynamic Netflix web app built with React, Firebase & SCSS.
+> A responsive and dynamic Netflix web app built with React, Firebase & SCSS. ( This project is ongoing )
 > Live demo [_here_]().
 
 ## Table of Contents
