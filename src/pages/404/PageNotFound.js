@@ -1,5 +1,5 @@
 import background from '../../assets/404_bg.jpeg'
-import { useEffect } from 'react'
+// 
 import { AuthContext } from '../../context/AuthContext'
 import { useContext } from 'react'
 import Browse from '../browse/Browse'

@@ -3,23 +3,27 @@ import { useEffect, useState } from 'react'
 import { collection, onSnapshot } from 'firebase/firestore'
 import Card from '../card/Card'
 import { useTitle } from '../../../hooks/useTitle'
+import { useContext } from 'react'
+import { AuthContext } from '../../../context/AuthContext'
 
 export default function Favorites({ tabTitle }) {
   const [favorites, setFavorites] = useState([])
 
+  const { currentUser } = useContext(AuthContext)
+
   useTitle(tabTitle)
 
   useEffect(() => {
-    onSnapshot(collection(db, 'favorites'),
-      (snapshot) => {
-        setFavorites(
-          snapshot.docs.map(doc => {
-            return { id: doc.id, ...doc.data() }
-          })
-        )
-      }
-    )
-  }, [])
+    const snapRef = collection(db, `users/${currentUser.uid}/favorite`)
+
+    onSnapshot(snapRef, (snapshot) => {
+      setFavorites(
+        snapshot.docs.map(doc => {
+          return { id: doc.id, ...doc.data() }
+        })
+      )
+    })
+  }, [currentUser])
 
   return (
     <div className="favorites_wrapper">

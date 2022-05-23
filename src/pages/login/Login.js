@@ -29,8 +29,7 @@ export default function Login() {
 
       .catch((error) => {
         // setError
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        console.log(error.message);
       });
 
   }

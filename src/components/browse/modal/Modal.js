@@ -2,11 +2,14 @@ import { BsPlayFill, BsFillXCircleFill } from 'react-icons/bs'
 import { AiOutlinePlusCircle, AiOutlineCheckCircle } from 'react-icons/ai'
 import { collection, addDoc, doc, deleteDoc } from 'firebase/firestore'
 import { db } from '../../../firebase/firebase'
-import Favorites from '../favorites/Favorites'
-
+import { AuthContext } from '../../../context/AuthContext'
+import { useContext } from 'react'
 
 export default function Modal({ poster, title, date, overview, setIsModalOpen }) {
 
+  const { currentUser } = useContext(AuthContext)
+
+  console.log(currentUser);
 
   const deleteDocHandler = async (id) => {
     const docRef = (db, 'favorites', id);
@@ -15,15 +18,16 @@ export default function Modal({ poster, title, date, overview, setIsModalOpen })
   }
 
   const handleFavorite = async () => {
-    console.log('hi');
+
     try {
-      await addDoc(collection(db, 'favorites'), {
+      const docRef = doc(db, 'users', currentUser.uid)
+      const colRef = collection(docRef, 'favorite')
+      addDoc(colRef, {
         poster,
         title,
         date,
         overview
       })
-      console.log(poster);
     } catch (err) {
       console.log(err.message);
     }
