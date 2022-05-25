@@ -1,23 +1,24 @@
 import { BsPlayFill, BsFillXCircleFill } from 'react-icons/bs'
-import { AiOutlinePlusCircle, AiOutlineCheckCircle } from 'react-icons/ai'
-import { collection, addDoc, doc, deleteDoc } from 'firebase/firestore'
+import {
+  AiOutlinePlusCircle,
+} from 'react-icons/ai' //AiOutlineCheckCircle
+import { collection, doc, addDoc } from 'firebase/firestore' //addDoc,  deleteDoc,
 import { db } from '../../../firebase/firebase'
 import { AuthContext } from '../../../context/AuthContext'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 export default function Modal({ poster, title, date, overview, setIsModalOpen }) {
-
   const { currentUser } = useContext(AuthContext)
 
-  console.log(currentUser);
 
-  const deleteDocHandler = async (id) => {
-    const docRef = (db, 'favorites', id);
-    // await deleteDoc(docRef)
-    console.log(docRef, id);
-  }
+  // const deleteDocHandler = async (id) => {
+  //   const docRef = (db, 'favorites', id);
+  //   // await deleteDoc(docRef)
+  //   console.log(docRef, id);
+  // }
 
-  const handleFavorite = async () => {
+
+  const addDocHandler = async () => {
 
     try {
       const docRef = doc(db, 'users', currentUser.uid)
@@ -58,9 +59,17 @@ export default function Modal({ poster, title, date, overview, setIsModalOpen })
               <BsPlayFill />
               <span>Play</span>
             </button>
-            <span onClick={() => handleFavorite()}>
+
+            <span onClick={() => addDocHandler()}>
               <AiOutlinePlusCircle className='like' />
             </span>
+            {/* {isFavorite ? (
+             ) : (
+               <span onClick={() => deleteDocHandler()}>
+                 <AiOutlineCheckCircle className='like' />
+               </span>
+             )} */}
+
           </div>
         </div>
       </div>

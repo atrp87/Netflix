@@ -7,8 +7,6 @@ export default function Featured({ title, overview, background, tabTitle }) {
   useTitle(tabTitle)
 
   return (
-
-
     <div className="featured_background">
       <img src={background} alt={overview} />
       <div className="info">

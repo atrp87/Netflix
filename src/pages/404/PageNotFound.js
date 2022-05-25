@@ -1,17 +1,27 @@
 import background from '../../assets/404_bg.jpeg'
-// 
 import { AuthContext } from '../../context/AuthContext'
-import { useContext } from 'react'
-import Browse from '../browse/Browse'
-import { Navigate } from 'react-router-dom'
+import { useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function PageNotFound() {
+  const [counter, setCounter] = useState(5)
   const { currentUser } = useContext(AuthContext)
 
+  const navigate = useNavigate()
+
   const redirectHandler = () => {
-    console.log(currentUser);
-    !currentUser ? <Browse /> : <Navigate to='/login' />
+    currentUser ? navigate('/browse') : navigate('/login')
   }
+
+  useEffect(() => {
+    const timer =
+      counter > 0 && setInterval(() => setCounter(counter - 1), 4000);
+    if (counter === 0) {
+      redirectHandler()
+    }
+    return () => clearInterval(timer);
+  }, [counter]);
+
   return (
     <div className="PageNotFound">
       <img src={background} alt="Lost in space" />
@@ -21,13 +31,11 @@ export default function PageNotFound() {
           <h1>Lost your way ?</h1>
         </div>
         <div className="404_subtitle">
-          <h4>Sorry, we can't find that page. You'll find loads to explore on the home page.</h4>
+          <h2>Sorry, we can't find that page. You'll find loads to explore on the home page.</h2>
+          <h3>You will be redirected in {counter}</h3>
         </div>
         <div className="404_btn">
           <button onClick={() => redirectHandler()}>Netflix Home</button>
-        </div>
-        <div className="error">
-          <p>Error Code</p>
         </div>
       </div>
     </div>
