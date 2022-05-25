@@ -5,8 +5,7 @@ import { auth } from '../../firebase/firebase'
 import { useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext'
-import { collection, addDoc, doc } from 'firebase/firestore'
-import { db } from '../../firebase/firebase'
+
 
 export default function Signup() {
   const [email, setEmail] = useState('')
