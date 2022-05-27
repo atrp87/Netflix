@@ -2,33 +2,80 @@ import { BsPlayFill, BsFillXCircleFill } from 'react-icons/bs'
 import {
   AiOutlinePlusCircle,
 } from 'react-icons/ai' //AiOutlineCheckCircle
-import { collection, doc, addDoc } from 'firebase/firestore' //addDoc,  deleteDoc,
+import { collection, doc, getDoc, addDoc, onSnapshot } from 'firebase/firestore' //addDoc,  deleteDoc,
 import { db } from '../../../firebase/firebase'
 import { AuthContext } from '../../../context/AuthContext'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 
 export default function Modal({ poster, title, date, overview, setIsModalOpen }) {
+  const [favorites, setFavorites] = useState([])
   const { currentUser } = useContext(AuthContext)
 
 
+
+  // console.log(favorite);
   // const deleteDocHandler = async (id) => {
   //   const docRef = (db, 'favorites', id);
   //   // await deleteDoc(docRef)
   //   console.log(docRef, id);
   // }
+  // if (ing && !ingredients.includes(ing)) {
+  //   setIngredients([...ingredients, newIngredient])
+  // }
+
+  // useEffect(() => {
+  //   const snapRef = collection(db, `users/${currentUser.uid}/favorite`)
+
+  //   onSnapshot(snapRef, (snapshot) => {
+  //     snapshot.docs.map((doc) =>
+  //       setFavorites({ ...doc.data() })
+
+  //     )
+  //   })
+  // }, [currentUser.uid, setFavorites])
+
+  // const docSnap = getDoc(collection(db, `users/${currentUser.uid}/favorite`));
+
+  // console.log(docSnap);
+
+  // docSnap.forEach((doc) => {
+  //   console.log(doc.data()); // "doc1", "doc2" and "doc3"
+  // });
+  // if (docSnap.exists()) {
+  //   console.log("Document data:", docSnap.data());
+  // } else {
+  //   // doc.data() will be undefined in this case
+  //   console.log("No such document!");
+  // }
 
 
   const addDocHandler = async () => {
 
+
     try {
-      const docRef = doc(db, 'users', currentUser.uid)
-      const colRef = collection(docRef, 'favorite')
-      addDoc(colRef, {
-        poster,
-        title,
-        date,
-        overview
-      })
+
+      console.log(favorites);
+
+      // const snapRef = collection(db, `users/${currentUser.uid}/favorite`)
+
+      // addDoc(snapRef, {
+      //   poster,
+      //   title,
+      //   date,
+      //   overview
+      // })
+
+      // console.log(doc.title, title);
+
+      // if (doc.title === title) {
+      //   console.log('exists');
+      // } else {
+      //   console.log('new');
+      // }
+
+
+
+
     } catch (err) {
       console.log(err.message);
     }
@@ -60,7 +107,7 @@ export default function Modal({ poster, title, date, overview, setIsModalOpen })
               <span>Play</span>
             </button>
 
-            <span onClick={() => addDocHandler()}>
+            <span onClick={() => addDocHandler(favorites.title)}>
               <AiOutlinePlusCircle className='like' />
             </span>
             {/* {isFavorite ? (

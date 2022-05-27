@@ -14,7 +14,7 @@ export default function Favorites({ tabTitle }) {
 
   useTitle(tabTitle)
 
-  console.log(favorites);
+
 
 
   useEffect(() => {

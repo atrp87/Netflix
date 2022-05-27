@@ -55,10 +55,18 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    width: 35%;
+    width: 65%;
     top: 40%;
-    left: 22%;
+    left: 40%;
     transform: translate(-50%, -50%);
+    @include for_tablet_portrait_up {
+      width: 50%;
+      left: 30%;
+    }
+    @include for_tablet_landscape_up {
+      width: 35%;
+      left: 22%;
+    }
 
     img {
       width: 100%;
@@ -67,7 +75,17 @@
     .desc {
       margin: 20px 0px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0 /45%);
-      font-size: 1.4vw;
+      font-size: 0.9rem;
+
+      @include for_tablet_portrait_up {
+        font-size: 1rem;
+      }
+      @include for_tablet_landscape_up {
+        font-size: 1.3rem;
+      }
+      @include for_desktop_up {
+        font-size: 2rem;
+      }
     }
 
     .buttons {
@@ -80,11 +98,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.4vw;
+        font-size: 0.9rem;
         font-weight: 700;
         margin-right: 10px;
         white-space: nowrap;
         cursor: pointer;
+        @include for_tablet_portrait_up {
+          font-size: 1rem;
+        }
+        @include for_tablet_landscape_up {
+          font-size: 1.3rem;
+        }
+        @include for_desktop_up {
+          font-size: 2rem;
+        }
 
         @include for_tablet_portrait_mid_up {
           padding: 0.625rem 1.25rem;
@@ -116,3 +143,35 @@
     }
   }
 }
+
+// @mixin for_phone_only {
+//   @media (max-width: 400px) {
+//     @content;
+//   }
+// }
+// @mixin for_tablet_portrait_up {
+//   @media (min-width: 550px) {
+//     @content;
+//   }
+// }
+
+// @mixin for_tablet_portrait_mid_up {
+//   @media (min-width: 750px) {
+//     @content;
+//   }
+// }
+// @mixin for_tablet_landscape_up {
+//   @media (min-width: 950px) {
+//     @content;
+//   }
+// }
+// @mixin for_desktop_up {
+//   @media (min-width: 1449px) {
+//     @content;
+//   }
+// }
+// @mixin for_big_desktop {
+//   @media (min-width: 1450px) {
+//     @content;
+//   }
+// }
