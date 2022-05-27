@@ -56,8 +56,8 @@
 
 ## Additional Features
 
-- The app should have a responsive media image carousel, including 1 - 10 Trending now numbers
-- The user can search media by name or genre
+- Impliment testing ( Jest )
+- The user can query search by name or genre
 - The user can edit account and avatar
 - The user can select and play movies
 - The user can make subscribe using a payment system
