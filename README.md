@@ -1,7 +1,13 @@
 # Netflix ( React-dom )
 
-> A responsive and dynamic Netflix web app built with React, Firebase & SCSS. ( This project is ongoing )
+> A responsive and dynamic Netflix web app built with React, Firebase & SCSS.
 > Live demo [_here_]().
+>
+> This project is ongoing, features and placeholder items will changed or expanded on.
+> 
+> email: andrew@admin.dev
+> 
+> password: 123456
 
 ## Table of Contents
 
