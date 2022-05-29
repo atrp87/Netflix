@@ -24,9 +24,12 @@
 
 ## General Information
 
--
--
--
+- I decided to build a clone of Netflix as it gave me a UI design I could visualise and build the UI myself and turn it into working code. I could also inspect elements and compare how they went about building the UI. 
+- I used firebase for its minimal setup and easy access to data and auth, allowing me to get more confident working end to end using react. I followed the Firebase DOCS building this out, I will most likely follow a brief overview tutorial of firebase to clear some things up as I found it a bit tricky finding some info in the DOCS.
+- This project gave me more exposure to different hooks ( useEffect, useContext, useReducer ) and custom hooks ( useFetch )
+- I hit my MVP so I decided to deploy the project, I will continue to work on it as there is plenty of features I will and want to add ( media carosel, media queries and Jest testing ). I will work and improve features as time goes on.
+I will build things outside the scope of this project and implement the newer features once I’ve spent time learning them.
+
 
 ## Technologies Used
 
