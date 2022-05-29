@@ -43,8 +43,8 @@ I will build things outside the scope of this project and implement the newer fe
 
 - Custom hooks ( useFetch ) extracting fetch logic needed to fetch the data and passing a url variable to the useFetch hook, allowing multiple components to fetch data using the same logic
 - useEffect on data fetching, updating the DOM and timers. Understanding the dependancy array, if absent running every time the component it rendered, if empty running once, adding dependence variables will run the effect again if the variable state changes and cleanup functions.  
-- useEffect, Reducers and React Context
-- Git Flow
+- useReducers and React Context
+- Typography, planning, time management and time contsraints
 
 ## Screenshots
 
