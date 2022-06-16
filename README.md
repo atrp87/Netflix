@@ -1,7 +1,7 @@
 # Netflix ( React-dom )
 
 > A responsive and dynamic Netflix web app built with React, Firebase & SCSS.
-> Live demo [_here_]().
+> Live demo [_here_](https://netflix-react-dom.netlify.app/).
 >
 > This project is ongoing, features and placeholder items will changed or expanded on.
 > 
@@ -24,9 +24,12 @@
 
 ## General Information
 
--
--
--
+- I decided to build a clone of Netflix as it gave me a UI design I could visualise and build the UI myself and turn it into working code. I could also inspect elements and compare how they went about building the UI. 
+- I used firebase for its minimal setup and easy access to data and auth, allowing me to get more confident working end to end using react. I followed the Firebase DOCS building this out, I will most likely follow a brief overview tutorial of firebase to clear some things up as I found it a bit tricky finding some info in the DOCS.
+- This project gave me more exposure to different hooks ( useEffect, useContext, useReducer ) and custom hooks ( useFetch )
+- I hit my MVP so I decided to deploy the project, I will continue to work on it as there is plenty of features I will and want to add ( media carosel, media queries and Jest testing ). I will work and improve features as time goes on.
+I will build things outside the scope of this project and implement the newer features once I’ve spent time learning them.
+
 
 ## Technologies Used
 
@@ -38,10 +41,10 @@
 
 ## Lessons Learned
 
-- SCSS ( Mixins, Loops, Maps & Structure )
-- Firestore and authentication
-- useEffect, Reducers and React Context
-- Git Flow
+- Custom hooks ( useFetch ) extracting fetch logic needed to fetch the data and passing a url variable to the useFetch hook, allowing multiple components to fetch data using the same logic
+- useEffect on data fetching, updating the DOM and timers. Understanding the dependancy array, if absent running every time the component it rendered, if empty running once, adding dependence variables will run the effect again if the variable state changes and cleanup functions.  
+- useReducers and React Context
+- Typography, planning, time management and time contsraints
 
 ## Screenshots
 
@@ -56,8 +59,8 @@
 
 ## Additional Features
 
-- The app should have a responsive media image carousel, including 1 - 10 Trending now numbers
-- The user can search media by name or genre
+- Impliment testing ( Jest )
+- The user can query search by name or genre
 - The user can edit account and avatar
 - The user can select and play movies
 - The user can make subscribe using a payment system
