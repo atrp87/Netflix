@@ -14,7 +14,7 @@ import { auth } from '../../../firebase/firebase'
 
 export default function Navbar({ setIsActive }) {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [searchQuery, setSearchQuery] = useState(false)
+  // const [searchQuery, setSearchQuery] = useState(false)
 
   const { currentUser } = useContext(AuthContext)
   const { dispatch } = useContext(AuthContext)
@@ -25,7 +25,6 @@ export default function Navbar({ setIsActive }) {
 
   const signOutHandler = () => {
     signOut(auth).then(() => {
-      // match password
       dispatch({ type: 'LOGOUT', currentUser: null })
       console.log('Sign-out successful.');
       navigate('/home');
@@ -78,12 +77,11 @@ export default function Navbar({ setIsActive }) {
           </div>
         </div>
         <div className="right_navbar">
-
-          {searchQuery &&
+          {/* {searchQuery &&
             <input type="text" />
-          }
+          } */}
           <FaSearch
-            onClick={() => setSearchQuery(true)}
+            // onClick={() => setSearchQuery(true)}
             className="icon search_icon" />
           <span className='mobile_responsive_up'>Children</span>
           <BsFillBellFill className="icon" />

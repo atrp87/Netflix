@@ -1,14 +1,17 @@
+import { useState } from 'react'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { BsPlayFill } from 'react-icons/bs'
 import { useTitle } from '../../../hooks/useTitle'
+import Modal from '../modal/Modal'
 
-export default function Featured({ title, overview, background, tabTitle }) {
+export default function Featured({ title, overview, featuredPoster, tabTitle }) {
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useTitle(tabTitle)
 
   return (
     <div className="featured_background">
-      <img src={background} alt={overview} />
+      <img src={featuredPoster} alt={overview} />
       <div className="info">
         <img
           src={title}
@@ -22,12 +25,24 @@ export default function Featured({ title, overview, background, tabTitle }) {
             <BsPlayFill />
             <span>Play</span>
           </button>
-          <button className="more">
+          <button onClick={() => setIsModalOpen(true)} className="more">
             <AiOutlineInfoCircle />
             <span>More Info</span>
           </button>
         </div>
       </div>
+      {
+        isModalOpen &&
+        <Modal
+          setIsModalOpen={setIsModalOpen}
+          isModalOpen={isModalOpen}
+          poster={featuredPoster}
+          title={title}
+          // date={date}
+          overview={overview}
+        />
+
+      }
     </div>
   )
 }

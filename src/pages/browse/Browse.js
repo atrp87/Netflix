@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Featured from "../../components/browse/featured/Featured";
 import Navbar from "../../components/browse/navbar/Navbar";
 import Footer from "../../components/home/footer/Footer";
@@ -26,7 +26,7 @@ export default function Browse() {
           <Featured
             tabTitle='Films - Netflix'
             title={filmTitle}
-            background={filmBackground}
+            featuredPoster={filmBackground}
             overview="A woman who's been alone on a spaceship her whole life becomes enamored with an engineer who suddenly enters her world and upends her universe."
           />
 
@@ -63,7 +63,7 @@ export default function Browse() {
           <Featured
             tabTitle='Series - Netflix'
             title={seriesTitle}
-            background={seriesBackground}
+            featuredPoster={seriesBackground}
             overview="A highly decorated ex-Marine sniper returns to action to foil an assassination plot targeting the president, but soon finds himself framed for murder."
           />
 

@@ -13,6 +13,7 @@ export default function Accordion({ children }) {
             Frequently Asked Questions
           </h1>
           <ul className="faq_list">
+
             {faqsJson.map((faq, i) => (
               <li
                 key={faq.id}
@@ -32,9 +33,9 @@ export default function Accordion({ children }) {
                     {faq.body}
                   </span>
                 </div>
-
               </li>
             ))}
+
           </ul>
         </div>
         {children}

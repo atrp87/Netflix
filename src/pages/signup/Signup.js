@@ -6,32 +6,40 @@ import { useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext'
 
-
 export default function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const { dispatch } = useContext(AuthContext)
   const navigate = useNavigate()
 
-
   const handleSignup = (e) => {
     e.preventDefault()
 
+    setLoading(true)
+
     createUserWithEmailAndPassword(auth, email, password)
+
       .then((userCredential) => {
+
+        if (userCredential && userCredential.uid) {
+
+        }
         const user = userCredential.user;
 
         dispatch({ type: 'LOGIN', payload: user })
         navigate('/browse')
 
-        // check uid and reference user my list
       })
       .catch((err) => {
         console.log(err.message);
+        setError(err.code)
         // output password length wrong
       })
-
+    setLoading(false)
   }
 
   return (
@@ -60,6 +68,16 @@ export default function Signup() {
                     placeholder='Email'
                     onChange={(e) => setEmail(e.target.value)}
                   />
+                  {error}
+                </div>
+                <div className="form_input">
+                  <input
+                    name="password"
+                    type="password"
+                    placeholder='Password'
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+
                 </div>
                 <div className="form_input">
                   <input
@@ -69,15 +87,7 @@ export default function Signup() {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                {/* <div className="form_input">
-                  <input
-                    name="password"
-                    type="password"
-                    placeholder='Password'
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div> */}
-                <button className="hybrid_auth_button">Sign In</button>
+                <button disabled={loading} className="hybrid_auth_button">Sign In</button>
               </form>
             </div>
             <div className="hybrid_auth_social">

@@ -9,6 +9,8 @@ import { AuthContext } from '../../context/AuthContext'
 export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState(null)
+
 
   const navigate = useNavigate()
 
@@ -24,12 +26,11 @@ export default function Login() {
 
         dispatch({ type: 'LOGIN', payload: user })
         navigate('/browse')
-
       })
-
       .catch((error) => {
-        // setError
         console.log(error.message);
+        // if (error.code === 'auth/wrong-password')
+        // setError('Wronrd')g Passwo
       });
 
   }
@@ -67,8 +68,12 @@ export default function Login() {
                     name="password"
                     type="password"
                     placeholder='Password'
+                    // value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
+                </div>
+                <div>
+                  {error && <p>{error}</p>}
                 </div>
                 <button className="hybrid_auth_button">Sign In</button>
               </form>

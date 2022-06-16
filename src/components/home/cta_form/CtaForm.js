@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function CtaForm() {
   return (
-    <form action="#" className="cta_form">
+    <form className="cta_form">
       <h3 className='cta_form_title'>Ready to watch? Enter your email to create or restart your membership.</h3>
       <div className="cta_form_lockup">
         <label placeholder='email'>

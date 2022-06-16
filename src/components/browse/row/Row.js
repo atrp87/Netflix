@@ -3,9 +3,10 @@ import { useState } from 'react'
 import { useFetch } from '../../../hooks/useFetch'
 import Pending from '../pending/Pending'
 
-export default function Row({ fetchUrl, genre }) {
+export default function Row({ fetchUrl, genre, favorites, setFavorites }) {
   const [url, setUrl] = useState(fetchUrl)
   const { data: videos, isPending, error } = useFetch(url)
+
 
   return (
     <div className="list">
@@ -17,7 +18,6 @@ export default function Row({ fetchUrl, genre }) {
           {
             videos &&
             videos.map((vid) => (
-
               <div key={vid.id}>
                 <Card
                   poster={vid.poster_path ? `https://image.tmdb.org/t/p/w500${vid.poster_path}` : ''}

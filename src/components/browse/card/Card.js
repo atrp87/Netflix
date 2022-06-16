@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react'
 import Modal from '../modal/Modal'
 
-export default function Card({ poster, title, date, overview }) {
+export default function Card({ poster, title, date, overview, id }) {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
@@ -14,7 +14,6 @@ export default function Card({ poster, title, date, overview }) {
       document.body.style.overflow = 'visible'
   }, [isModalOpen]);
 
-
   return (
     <>
       {
@@ -22,6 +21,7 @@ export default function Card({ poster, title, date, overview }) {
         <Modal
           setIsModalOpen={setIsModalOpen}
           isModalOpen={isModalOpen}
+          id={id}
           poster={poster}
           title={title}
           date={date}
