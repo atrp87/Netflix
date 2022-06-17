@@ -8,7 +8,7 @@ export default function Featured({ title, overview, featuredPoster, tabTitle }) 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   useTitle(tabTitle)
-
+  console.log(title);
   return (
     <div className="featured_background">
       <img src={featuredPoster} alt={overview} />
@@ -37,7 +37,7 @@ export default function Featured({ title, overview, featuredPoster, tabTitle }) 
           setIsModalOpen={setIsModalOpen}
           isModalOpen={isModalOpen}
           poster={featuredPoster}
-          title={title}
+          // title={title}
           // date={date}
           overview={overview}
         />

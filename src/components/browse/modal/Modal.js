@@ -21,29 +21,31 @@ export default function Modal({ poster, featuredPoster, title, date, overview, s
   const { currentUser } = useContext(AuthContext)
   const { documents: favorites } = useCollection(`users/${currentUser.uid}/favorites`)
 
-  console.log(favorites);
   useEffect(() => {
-    const timer = async () => {
-      favorites.map(favorite => {
-        if (favorite.title === title) {
-          setIsFavorite(true)
-        } else {
-          setIsFavorite(false)
-        }
-      })
+    const currentFavorite = async () => {
+      if (favorites)
+        favorites.map((favorite) => {
+          // filter
+          if (favorite.title === title) {
+            setIsFavorite(true)
+          }
+        })
     }
 
-    timer()
+    currentFavorite()
 
   }, [favorites, title])
 
-
-
-
   const addDocHandler = async () => {
     const docRef = doc(db, 'users', `${currentUser.uid}`, 'favorites', title);
-    await setDoc(docRef, { title, poster, date, overview })
-    console.log('add');
+
+    await setDoc(docRef, {
+      title,
+      poster,
+      date,
+      overview
+    })
+    console.log(title, 'Added');
   }
 
 
@@ -51,8 +53,9 @@ export default function Modal({ poster, featuredPoster, title, date, overview, s
     const docRef = doc(db, 'users', `${currentUser.uid}`, 'favorites', title);
 
     await deleteDoc(docRef)
-    console.log('delete');
 
+    setIsFavorite(false)
+    console.log(title, 'Deleted');
   }
 
 

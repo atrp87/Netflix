@@ -12,6 +12,8 @@ export const useCollection = (coll) => {
   useEffect(() => {
     let ref = collection(db, coll)
 
+    setIsPending(true)
+
     // unSubscribe: stop listening when they component unmounts
     const unSub = onSnapshot(ref, (snapshot) => {
       // Snapshot fires once initially but anytime after
@@ -25,11 +27,13 @@ export const useCollection = (coll) => {
       })
 
       setDocuments(results)
+      setIsPending(false)
     })
+
 
     return () => unSub()
   }, [coll, setDocuments])
 
-  return { documents }
+  return { documents, isPending }
 
 }

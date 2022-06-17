@@ -7,11 +7,9 @@ import { useCollection } from '../../../hooks/useCollection'
 import { AuthContext } from '../../../context/AuthContext';
 
 export default function Favorites({ tabTitle }) {
-  const [isPending, setIsPending] = useState(false)
-  useTitle(tabTitle)
-
   const { currentUser } = useContext(AuthContext)
-  const { documents: favorites } = useCollection(`users/${currentUser.uid}/favorites`)
+  const { documents: favorites, isPending } = useCollection(`users/${currentUser.uid}/favorites`)
+  useTitle(tabTitle)
 
   return (
     <div className="favorites_wrapper">
