@@ -4,6 +4,8 @@
 > Live demo [_here_](https://netflix-react-dom.netlify.app/).
 >
 > This project is ongoing, features and placeholder items will changed or expanded on.
+
+> Login Details:
 > 
 > email: andrew@admin.dev
 > 
@@ -13,9 +15,9 @@
 
 - [General Info](#general-information)
 - [Technologies Used](#technologies-used)
-- [Lessons Learned](#Lessons-learned)
-- [MVP](#MVP)
-- [Additional Features](#Additional-Features)
+- [Lessons Learned](#lessons-learned)
+- [MVP](#mvp)
+- [Additional Features](#additional-features)
 - [Screenshots](#screenshots)
 - [Setup](#setup)
 - [Project Status](#project-status)
@@ -24,11 +26,12 @@
 
 ## General Information
 
-- I decided to build a clone of Netflix as it gave me a UI design I could visualise and build the UI myself and turn it into working code. I could also inspect elements and compare how they went about building the UI. 
-- I used firebase for its minimal setup and easy access to data and auth, allowing me to get more confident working end to end using react. I followed the Firebase DOCS building this out, I will most likely follow a brief overview tutorial of firebase to clear some things up as I found it a bit tricky finding some info in the DOCS.
+- I decided to build a clone of Netflix as it gave me a UI design I could visualise and build out with my own working code.
+- I used minimal libraries to get a stronger understanding of React before looking into reacts large ecosystem of libraries.
+- I used firebase for its minimal setup and easy access to data and auth, allowing me to get more confident working end to end using react. This was a breif overview of firebase for me as I was only using the docs. I will be expanding on my firebase knowledge using other resources and returning to apply what i've learnt.
 - This project gave me more exposure to different hooks ( useEffect, useContext, useReducer ) and custom hooks ( useFetch )
-- I hit my MVP so I decided to deploy the project, I will continue to work on it as there is plenty of features I will and want to add ( media carosel, media queries and Jest testing ). I will work and improve features as time goes on.
-I will build things outside the scope of this project and implement the newer features once I’ve spent time learning them.
+- I hit my MVP so I decided to deploy the project, I will continue to work on it as there is plenty of features I will and want to add ( media carosel, media queries ) and testing ( Jest ).
+I will build and learn outside the scope of this project and implement the newer features once I’ve spent time learning them.
 
 
 ## Technologies Used
@@ -41,14 +44,12 @@ I will build things outside the scope of this project and implement the newer fe
 
 ## Lessons Learned
 
-- Custom hooks ( useFetch ) extracting fetch logic needed to fetch the data and passing a url variable to the useFetch hook, allowing multiple components to fetch data using the same logic
-- useEffect on data fetching, updating the DOM and timers. Understanding the dependancy array, if absent running every time the component it rendered, if empty running once, adding dependence variables will run the effect again if the variable state changes and cleanup functions.  
-- useReducers and React Context
+- Custom hooks ( useFetch ) extracting fetch logic needed to fetch the data and passing a url variable to the useFetch hook, allowing multiple components to fetch data using the same logic.
+- useEffect: Data fetching, updating the DOM and timers. Understanding the dependancy array, if the array is absent, empty or it's dependant on a variable state change.
+- useContext: Creating context for authenticated users sharing the current auth users unique id from firebase auth, allowing me to share the unique id values to multiple components ( login, signout, Favorites ) aswell as using a custom useCollection hook in tandem with auth context to update, delete and read documents from the firebase collection corresponding to the users unique id.
+- Getting comfortable with functional components just being functions. At the beggining of this project I lacked foresight when building out my components. An example of this would be inputs, I have multiple forms using different inputs where I could have created a reusable input component and passed props for each input type.
 - Typography, planning, time management and time contsraints
 
-## Screenshots
-
-<!-- ![Netflix Gif](public/audio_player.gif) -->
 
 ## MVP
 
@@ -60,10 +61,10 @@ I will build things outside the scope of this project and implement the newer fe
 ## Additional Features
 
 - Impliment testing ( Jest )
-- The user can query search by name or genre
+- The user can query the API by meida name or genre
 - The user can edit account and avatar
-- The user can select and play movies
-- The user can make subscribe using a payment system
+- The user can select and playback a video file
+- Implement a media carousel ( Currently fetching / displaying 6 movies on each row )
 
 ## Screenshots
 
